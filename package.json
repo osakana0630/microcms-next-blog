@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format": "prettier --write .",
-    "lint": "eslint --fix .",
+    "format": "prettier --ignore-path .gitignore --write .",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore .",
     "fix": "npm run format && npm run lint",
     "prepare": "husky install"
   },
@@ -18,8 +18,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write",
-      "eslint --fix"
+      "prettier --write .",
+      "eslint --fix ."
     ]
   },
   "devDependencies": {

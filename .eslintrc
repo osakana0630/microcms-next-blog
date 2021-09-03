@@ -2,7 +2,48 @@
   "root": true,
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "node": true
   },
-  "extends": ["eslint:recommended", "prettier"]
+  "extends": ["eslint:recommended", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "no-unused-vars": "off",
+    "import/prefer-default-export": "off",
+    "no-undef": "warn",
+    "no-shadow": "off",
+    "no-use-before-define": "off",
+    "no-plusplus": "off",
+    "strict": 0,
+    "no-empty": "off",
+    "react/jsx-curly-brace-presence": "off",
+    //     temporary
+    "jsx-a11y/no-static-element-interactions": "off", // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-static-element-interactions.md
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/control-has-associated-label": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+
+    "import/no-extraneous-dependencies": "off",
+    "react/no-array-index-key": "warn",
+    "no-nested-ternary": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-unused-expressions": ["error", {"allowTernary": true}],
+    "no-fallthrough": "off",
+    // for ofのみ許可 airbnb
+    "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
+    "react/sort-comp": "off",
+    // classでのthisを許可する
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md
+    "react/destructuring-assignment": ["error", "always", { "ignoreClassFields": true }],
+    "no-console": "off"
+  }
 }
