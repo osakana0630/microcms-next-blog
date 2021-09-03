@@ -36,14 +36,23 @@
     "react/no-array-index-key": "warn",
     "no-nested-ternary": "off",
     "react/jsx-props-no-spreading": "off",
-    "no-unused-expressions": ["error", {"allowTernary": true}],
+    "no-unused-expressions": ["error", { "allowTernary": true }],
     "no-fallthrough": "off",
     // for ofのみ許可 airbnb
-    "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
+    "no-restricted-syntax": [
+      "error",
+      "ForInStatement",
+      "LabeledStatement",
+      "WithStatement"
+    ],
     "react/sort-comp": "off",
     // classでのthisを許可する
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md
-    "react/destructuring-assignment": ["error", "always", { "ignoreClassFields": true }],
+    "react/destructuring-assignment": [
+      "error",
+      "always",
+      { "ignoreClassFields": true }
+    ],
     "no-console": "off"
   }
 }
