@@ -2,10 +2,12 @@
 import { client } from '../../libs/client'
 
 export default function BlogId({ blog }) {
+  console.log(blog)
   return (
     <main>
       <h1>{blog.title}</h1>
       <p>{blog.publishedAt}</p>
+      <p>{blog.category.name}</p>
       <div
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
@@ -20,7 +22,10 @@ export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: 'blog' })
 
   const paths = data.contents.map((content) => `/blog/${content.id}`)
-  return { paths, fallback: false }
+  return {
+    paths,
+    fallback: false, //存在しないpathにアクセスがあったら404ページを出す
+  }
 }
 
 // データをテンプレートに受け渡す部分の処理を記述します

@@ -1,6 +1,8 @@
 /* eslint-disable */
 import { client } from '../libs/client'
 import Link from 'next/link'
+import { Button } from 'antd'
+import { DownloadOutlined } from '@ant-design/icons'
 
 export default function Home({ blog }) {
   return (
@@ -11,6 +13,7 @@ export default function Home({ blog }) {
             <Link href={`/blog/${blog.id}`}>
               <a>{blog.title}</a>
             </Link>
+            <Button icon={<DownloadOutlined />} type="primary" />
           </li>
         ))}
       </ul>
